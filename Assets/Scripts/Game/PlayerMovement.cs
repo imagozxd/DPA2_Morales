@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -52,4 +53,24 @@ public class PlayerMovement : MonoBehaviour
             CandyGenerator.instance.ManageCandy(other.gameObject.GetComponent<CandyController>(), this);
         }
     }
+    public void OnMovUp(InputAction.CallbackContext context)
+    {
+        Debug.Log(context.ReadValue<float>());
+        Debug.Log("si hay subida");
+        if (context.ReadValue<float>() > 0f)
+        {
+            //myRB.transform.Translate();
+            Debug.Log("deberia subir");
+        }
+    }
+    public void OnMovDown(InputAction.CallbackContext context)
+    {        
+        Debug.Log("reconoce bajar");
+        if (context.ReadValue<float>() < 0f)
+        {
+            //myRB.transform.Translate();
+            Debug.Log("deberia bajar");
+        }
+    }
+
 }
