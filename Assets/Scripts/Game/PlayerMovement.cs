@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float limitSuperior;
     private float limitInferior;
     public int player_lives = 4;
+    public TMP_Text scoreTxt;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,23 +23,6 @@ public class PlayerMovement : MonoBehaviour
         myRB = GetComponent<Rigidbody2D>();
         SetMinMax();
     }
-
-    // Update is called once per frame
-    /*void Update()
-    {
-        if (Input.GetKey(up) && transform.position.y < limitSuperior)
-        {
-            myRB.velocity = new Vector2(0f, speed);
-        }
-        else if (Input.GetKey(down) && transform.position.y > limitInferior)
-        {
-            myRB.velocity = new Vector2(0f, -speed);
-        }
-        else
-        {
-            myRB.velocity = Vector2.zero;
-        }
-    }*/
 
     void SetMinMax()
     {
@@ -52,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
         {
             CandyGenerator.instance.ManageCandy(other.gameObject.GetComponent<CandyController>(), this);
             EnemyGenerator.instance.ManageEnemy(other.gameObject.GetComponent<EnemyController>(), this);
+            
+        }
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("deberia bajar vida");
         }
     }
     public void OnMovUp(InputAction.CallbackContext context)

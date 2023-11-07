@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Candy
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX

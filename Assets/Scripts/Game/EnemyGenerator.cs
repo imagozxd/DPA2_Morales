@@ -60,8 +60,8 @@ public class EnemyGenerator : MonoBehaviour
             return;
         }*/
         int lives = player_script.player_lives;
-        int live_changer = enemy_script.lifeChanges;
-        lives += live_changer;
+        //int live_changer = enemy_script.lifeChanges;
+        //lives += live_changer;
         print(lives);
         if (lives <= 0)
         {

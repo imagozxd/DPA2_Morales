@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int frame;
-    public int lifeChanges;
+    
+    public int life = 4;
 
     void Update()
     {
