@@ -33,7 +33,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "New control scheme1",
+                    "groups": "New control scheme1;New control scheme;Gameplay2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true

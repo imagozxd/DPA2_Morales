@@ -71,6 +71,13 @@ public class CandyGenerator : MonoBehaviour
         player_script.player_lives = lives;
         Destroy(candy_script.gameObject);
     }
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("hay impacto candy-player");
+        }
+    }*/
 
 
 }

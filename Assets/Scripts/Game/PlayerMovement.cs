@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetKey(up) && transform.position.y < limitSuperior)
         {
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             myRB.velocity = Vector2.zero;
         }
-    }
+    }*/
 
     void SetMinMax()
     {
@@ -55,22 +55,8 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnMovUp(InputAction.CallbackContext context)
     {
-        Debug.Log(context.ReadValue<float>());
-        Debug.Log("si hay subida");
-        if (context.ReadValue<float>() > 0f)
-        {
-            //myRB.transform.Translate();
-            Debug.Log("deberia subir");
-        }
-    }
-    public void OnMovDown(InputAction.CallbackContext context)
-    {        
-        Debug.Log("reconoce bajar");
-        if (context.ReadValue<float>() < 0f)
-        {
-            //myRB.transform.Translate();
-            Debug.Log("deberia bajar");
-        }
+        float directionMovement = context.ReadValue<float>()*speed;
+        myRB.velocity = new Vector2(0f, directionMovement);
     }
 
 }
