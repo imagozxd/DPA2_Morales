@@ -54,11 +54,11 @@ public class EnemyGenerator : MonoBehaviour
             Destroy(enemy_script.gameObject);
             return;
         }
-        if (enemy_script.frame == 3)
+        /*if (enemy_script.frame == 3)
         {
             SceneManager.LoadScene("GameOver");
             return;
-        }
+        }*/
         int lives = player_script.player_lives;
         int live_changer = enemy_script.lifeChanges;
         lives += live_changer;

@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "Candy")
         {
             CandyGenerator.instance.ManageCandy(other.gameObject.GetComponent<CandyController>(), this);
+            EnemyGenerator.instance.ManageEnemy(other.gameObject.GetComponent<EnemyController>(), this);
         }
     }
     public void OnMovUp(InputAction.CallbackContext context)
